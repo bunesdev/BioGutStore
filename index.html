@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BioGut Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">BioGut Store</div>
+      <nav>
+        <ul>
+          <li onclick="scrollToSection('home')">Home</li>
+          <li onclick="scrollToSection('produtos')">Produtos</li>
+          <li onclick="scrollToSection('sobre')">Sobre</li>
+          <li onclick="scrollToSection('contatos')">Contatos</li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- SEÇÃO 1: HOME -->
+    <section id="home" class="container">
+      <div class="tech-circle">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+      <div class="list">
+        <div class="item active" data-produto="balance">
+          <div class="product-img">
+            <img src="./imagem/biogut.png" alt="BioGut" />
+          </div>
+          <div class="content">
+            <p class="product-tag">Lançamento</p>
+            <p class="product-name">BioGut Balance Microbiota</p>
+            <p class="description">
+              Desenvolvido com base em biotecnologia moderna, ele atua
+              diretamente na causa dos desequilíbrios intestinais, promovendo
+              bem-estar contínuo, absorção eficiente de nutrientes e mais
+              qualidade de vida para cães e gatos.
+            </p>
+            <!-- FIX 1: botão agora passa o produto diretamente -->
+          </div>
+        </div>
+        <div class="item" data-produto="nutri">
+          <div class="product-img">
+            <img src="./imagem/nutri.png" alt="Nutri" />
+          </div>
+          <div class="content">
+            <p class="product-tag">Ração Premium</p>
+            <p class="product-name">BioGut Nutri - Ração Funcional</p>
+            <p class="description">
+              BioGut Nutri Balance é uma ração completa desenvolvida para
+              oferecer nutrição equilibrada com suporte funcional ao organismo.
+              Mais do que alimentar, ela atua diretamente na saúde intestinal e
+              no bem-estar geral do pet.
+            </p>
+          </div>
+        </div>
+        <div class="item" data-produto="chew">
+          <div class="product-img">
+            <img src="./imagem/chew.png" alt="Chew" />
+          </div>
+          <div class="content">
+            <p class="product-tag">Diversão Saudável</p>
+            <p class="product-name">Petiscos BioIntestinais</p>
+            <p class="description">
+              Cuidado intestinal no formato que seu pet ama. O BioGut Chew
+              transforma a suplementação em uma experiência prática e saborosa,
+              com cápsulas mastigáveis desenvolvidas para promover equilíbrio
+              digestivo e suporte imunológico.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="arrows">
+        <button class="arrow-btn" id="prev">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="#fff"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"
+            />
+          </svg>
+        </button>
+        <button class="arrow-btn" id="next">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="#fff"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="indicators">
+        <div class="dots">
+          <div class="dot active"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+      <div class="scroll-hint" onclick="scrollToSection('produtos')">
+        <span>Ver Produtos</span>
+        <div class="scroll-arrow">↓</div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 2: PRODUTOS -->
+    <section id="produtos" class="section-produtos">
+      <div class="section-bg-circles"><div class="bg-circle"></div></div>
+      <div class="section-header reveal">
+        <p class="section-tag">Linha Completa</p>
+        <h2 class="section-title">
+          Produtos <span class="highlight">BioGut</span>
+        </h2>
+        <p class="section-subtitle">
+          Ciência e natureza unidos para o bem-estar do seu pet
+        </p>
+      </div>
+      <div class="produtos-grid">
+        <div class="produto-card reveal" id="card-balance">
+          <div class="card-glow"></div>
+          <div class="card-img-wrap">
+            <img src="./imagem/biogut.png" alt="BioGut Balance" />
+          </div>
+          <div class="card-info">
+            <span class="card-tag">Lançamento</span>
+            <h3 class="card-name">BioGut Balance Microbiota</h3>
+            <p class="card-desc">
+              Suplemento probiótico avançado para equilíbrio intestinal.
+            </p>
+            <div class="card-specs">
+              <div class="spec-item">
+                <span class="spec-icon">🧬</span
+                ><span>10 cepas probióticas</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-icon">📦</span><span>30 cápsulas / 300g</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-icon">🐾</span><span>Cães e Gatos</span>
+              </div>
+            </div>
+            <button class="card-btn" onclick="openModal('balance')">
+              Ver Detalhes
+            </button>
+          </div>
+        </div>
+        <div class="produto-card reveal" id="card-nutri">
+          <div class="card-glow card-glow-2"></div>
+          <div class="card-img-wrap">
+            <img src="./imagem/nutri.png" alt="BioGut Nutri" />
+          </div>
+          <div class="card-info">
+            <span class="card-tag">Ração Premium</span>
+            <h3 class="card-name">BioGut Nutri - Ração Funcional</h3>
+            <p class="card-desc">
+              Ração completa com suporte funcional ao organismo.
+            </p>
+            <div class="card-specs">
+              <div class="spec-item">
+                <span class="spec-icon">🌾</span
+                ><span>Ingredientes naturais</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-icon">📦</span><span>1kg / 2kg / 5kg</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-icon">🐾</span><span>Cães e Gatos</span>
+              </div>
+            </div>
+            <button class="card-btn" onclick="openModal('nutri')">
+              Ver Detalhes
+            </button>
+          </div>
+        </div>
+        <div class="produto-card reveal" id="card-chew">
+          <div class="card-glow card-glow-3"></div>
+          <div class="card-img-wrap">
+            <img src="./imagem/chew.png" alt="BioGut Chew" />
+          </div>
+          <div class="card-info">
+            <span class="card-tag">Diversão Saudável</span>
+            <h3 class="card-name">Petiscos BioIntestinais</h3>
+            <p class="card-desc">
+              Suplementação saborosa em formato de petisco mastigável.
+            </p>
+            <div class="card-specs">
+              <div class="spec-item">
+                <span class="spec-icon">🍖</span
+                ><span>Sabor frango natural</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-icon">📦</span><span>30 unidades / 500g</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-icon">🐾</span><span>Cães e Gatos</span>
+              </div>
+            </div>
+            <button class="card-btn" onclick="openModal('chew')">
+              Ver Detalhes
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 3: SOBRE -->
+    <section id="sobre" class="section-sobre">
+      <div class="section-bg-circles">
+        <div class="bg-circle bc-right"></div>
+      </div>
+      <div class="section-header reveal">
+        <p class="section-tag">Por que escolher</p>
+        <h2 class="section-title">
+          Nossos <span class="highlight">Diferenciais</span>
+        </h2>
+        <p class="section-subtitle">
+          Tecnologia de ponta a serviço da saúde animal
+        </p>
+      </div>
+      <div class="diferenciais-grid">
+        <div class="diferencial-card reveal">
+          <div class="dif-icon">🔬</div>
+          <h3>Biotecnologia Avançada</h3>
+          <p>
+            Desenvolvido em laboratório com as mais modernas técnicas de
+            biotecnologia, garantindo eficácia comprovada em cada produto.
+          </p>
+        </div>
+        <div class="diferencial-card reveal">
+          <div class="dif-icon">🌿</div>
+          <h3>Ingredientes Naturais</h3>
+          <p>
+            Fórmulas baseadas em ingredientes 100% naturais, sem corantes
+            artificiais, conservantes ou substâncias nocivas.
+          </p>
+        </div>
+        <div class="diferencial-card reveal">
+          <div class="dif-icon">✅</div>
+          <h3>Testado e Aprovado</h3>
+          <p>
+            Todos os produtos passam por rigorosos testes de qualidade e
+            segurança antes de chegar às mãos dos tutores.
+          </p>
+        </div>
+        <div class="diferencial-card reveal">
+          <div class="dif-icon">🏆</div>
+          <h3>Resultados Comprovados</h3>
+          <p>
+            Mais de 10.000 pets beneficiados com melhora significativa na saúde
+            intestinal e bem-estar geral.
+          </p>
+        </div>
+        <div class="diferencial-card reveal">
+          <div class="dif-icon">🐾</div>
+          <h3>Para Cães e Gatos</h3>
+          <p>
+            Linha completa desenvolvida especificamente para as necessidades
+            fisiológicas de cães e gatos de todas as raças e idades.
+          </p>
+        </div>
+        <div class="diferencial-card reveal">
+          <div class="dif-icon">💊</div>
+          <h3>Fácil Administração</h3>
+          <p>
+            Formatos variados — cápsulas, ração e petiscos — para facilitar a
+            rotina de suplementação do seu pet.
+          </p>
+        </div>
+      </div>
+
+      <!-- Composição -->
+      <div class="composicao-wrap reveal">
+        <div class="section-header">
+          <p class="section-tag">Transparência total</p>
+          <h2 class="section-title">
+            Do que é <span class="highlight">Feito</span>
+          </h2>
+        </div>
+        <div class="composicao-grid">
+          <div class="comp-item">
+            <div class="comp-info">
+              <span class="comp-name">Lactobacillus acidophilus</span
+              ><span class="comp-pct">40%</span>
+            </div>
+            <div class="comp-bar">
+              <div class="comp-fill" style="--pct: 40%"></div>
+            </div>
+            <p class="comp-desc">
+              Cepa probiótica principal para equilíbrio da microbiota
+            </p>
+          </div>
+          <div class="comp-item">
+            <div class="comp-info">
+              <span class="comp-name">Bifidobacterium longum</span
+              ><span class="comp-pct">25%</span>
+            </div>
+            <div class="comp-bar">
+              <div class="comp-fill" style="--pct: 25%"></div>
+            </div>
+            <p class="comp-desc">Fortalecimento da imunidade intestinal</p>
+          </div>
+          <div class="comp-item">
+            <div class="comp-info">
+              <span class="comp-name">Frutooligossacarídeos (FOS)</span
+              ><span class="comp-pct">20%</span>
+            </div>
+            <div class="comp-bar">
+              <div class="comp-fill" style="--pct: 20%"></div>
+            </div>
+            <p class="comp-desc">
+              Prebiótico que alimenta as bactérias benéficas
+            </p>
+          </div>
+          <div class="comp-item">
+            <div class="comp-info">
+              <span class="comp-name">Enzimas Digestivas</span
+              ><span class="comp-pct">15%</span>
+            </div>
+            <div class="comp-bar">
+              <div class="comp-fill" style="--pct: 15%"></div>
+            </div>
+            <p class="comp-desc">Melhora a absorção de nutrientes</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Equipe -->
+      <div class="equipe-wrap reveal">
+        <div class="section-header">
+          <p class="section-tag">Quem fez acontecer</p>
+          <h2 class="section-title">
+            Nossa <span class="highlight">Equipe</span>
+          </h2>
+        </div>
+        <div class="equipe-grid">
+          <div class="membro-card reveal">
+            <div class="membro-foto">
+              <img
+                src="./imagem/bunes.jpg"
+                alt="Bunes"
+                onerror="this.src='https://ui-avatars.com/api/?name=Bunes&background=2ecc71&color=fff&size=200&font-size=0.4'"
+              />
+            </div>
+            <div class="membro-info">
+              <h3 class="membro-nome">Bunes</h3>
+              <span class="membro-cargo">Back-end</span>
+              <p class="membro-desc">
+                Responsável pela estrutura, lógica e funcionamento do sistema.
+              </p>
+            </div>
+          </div>
+          <div class="membro-card reveal">
+            <div class="membro-foto">
+              <img
+                src="./imagem/ricardo.jpg"
+                alt="Ricardo"
+                onerror="this.src='https://ui-avatars.com/api/?name=Ricardo&background=00c853&color=fff&size=200&font-size=0.4'"
+              />
+            </div>
+            <div class="membro-info">
+              <h3 class="membro-nome">Ricardo</h3>
+              <span class="membro-cargo">Front-end</span>
+              <p class="membro-desc">
+                Responsável pelo design, interface e experiência do usuário.
+              </p>
+            </div>
+          </div>
+          <div class="membro-card reveal">
+            <div class="membro-foto">
+              <img
+                src="./imagem/eduardo.jpg"
+                alt="Eduardo"
+                onerror="this.src='https://ui-avatars.com/api/?name=Eduardo&background=009624&color=fff&size=200&font-size=0.4'"
+              />
+            </div>
+            <div class="membro-info">
+              <h3 class="membro-nome">Eduardo</h3>
+              <span class="membro-cargo">Marketing</span>
+              <p class="membro-desc">
+                Responsável pela identidade da marca e estratégia de
+                comunicação.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 4: CONTATOS -->
+    <section id="contatos" class="section-contatos">
+      <div class="section-bg-circles">
+        <div class="bg-circle bc-center"></div>
+      </div>
+      <div class="section-header reveal">
+        <p class="section-tag">Fale Conosco</p>
+        <h2 class="section-title">
+          Entre em <span class="highlight">Contato</span>
+        </h2>
+        <p class="section-subtitle">
+          Estamos prontos para ajudar você e seu pet!
+        </p>
+      </div>
+      <div class="contato-wrap">
+        <!-- FIX 2: contato-info reestruturado para alinhar corretamente os 3 itens -->
+        <div class="contato-info reveal">
+          <div class="contato-item">
+            <div class="contato-icon">📧</div>
+            <div>
+              <h4>E-mail</h4>
+              <p>contato@biogutstore.com.br</p>
+            </div>
+          </div>
+          <div class="contato-item">
+            <div class="contato-icon">📱</div>
+            <div>
+              <h4>WhatsApp</h4>
+              <p>(11) 99999-9999</p>
+            </div>
+          </div>
+          <div class="contato-item">
+            <div class="contato-icon">📍</div>
+            <div>
+              <h4>Localização</h4>
+              <p>Salvador, BA — Brasil</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="contato-form reveal" onsubmit="enviarFormulario(event)">
+          <div class="form-group">
+            <label>Nome</label>
+            <input type="text" placeholder="Seu nome completo" required />
+          </div>
+          <div class="form-group">
+            <label>E-mail</label>
+            <input type="email" placeholder="seu@email.com" required />
+          </div>
+          <div class="form-group">
+            <label>Assunto</label>
+            <select>
+              <option value="">Selecione um assunto</option>
+              <option>Dúvida sobre produto</option>
+              <option>Pedido / Compra</option>
+              <option>Suporte técnico</option>
+              <option>Parceria</option>
+              <option>Outros</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Mensagem</label>
+            <textarea
+              placeholder="Escreva sua mensagem aqui..."
+              rows="4"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn form-btn">Enviar Mensagem</button>
+          <p class="form-success" id="formSuccess">
+            ✅ Mensagem enviada com sucesso!
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="logo">BioGut Store</div>
+        <p>© 2026 BioGut Store. Todos os direitos reservados.</p>
+        <p>Desenvolvido com cuidado para o bem-estar animal!</p>
+      </div>
+    </footer>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+      <div class="modal" onclick="event.stopPropagation()">
+        <button class="modal-close" onclick="closeModal()">✕</button>
+        <div class="modal-content" id="modalContent"></div>
+      </div>
+    </div>
+
+    <script src="./scripts.js"></script>
+  </body>
+</html>
